@@ -86,8 +86,8 @@ extension Coordinator {
         }
     }
     private func push(_ page: Page) {self.presentedPage = nil;path.append(page) }
-    private func pop() {guard !path.isEmpty else {return};path.removeLast();}
-    private func popToRoot() {guard !path.isEmpty else {return};path.removeLast(path.count);}
+    private func pop() {self.presentedPage = nil;guard !path.isEmpty else {return};path.removeLast();}
+    private func popToRoot() {self.presentedPage = nil;guard !path.isEmpty else {return};path.removeLast(path.count);}
     private func present(_ page: Page) {presentedPage = page;}
     private func presentModal(_ page: Page) {}
     private func presentModalFromBottom(_ page: Page) {}
